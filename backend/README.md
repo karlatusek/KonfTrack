@@ -30,12 +30,12 @@ Upravljanje konferencijama:
 
 
 Sigurnost, validacija i tehnička kvaliteta:
-	Sanitizacija i validacija svih ulaznih podataka iz zahtjeva
-	Zaštita lozinki pomoću jakih algoritmima 
-	Sigurna provjera prava preuzimanja privatnih PDF datoteka
-	Zaštita od curenja osobnih podataka 
-	Centralizirano bilježenje tehničkih pogrešaka 
-	Pisanje unit i integracijskih testova za ključne rute
+	-Sanitizacija i validacija svih ulaznih podataka iz zahtjeva
+	-Zaštita lozinki pomoću jakih algoritmima 
+	-Sigurna provjera prava preuzimanja privatnih PDF datoteka
+	-Zaštita od curenja osobnih podataka 
+	-Centralizirano bilježenje tehničkih pogrešaka 
+	-Pisanje unit i integracijskih testova za ključne rute
 
 Predaja znanstvenih radova
 	Unos metapodataka rada (naslov, sažetak, ključne riječi)
