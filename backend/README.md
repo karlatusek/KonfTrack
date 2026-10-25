@@ -67,3 +67,44 @@ Statistika i izvještaji
 	Izračun postotka dovršenih i zakašnjelih recenzija
 	Sumarno brojanje prihvaćenih i odbijenih radova
 	Generiranje i izvoz izvještaja u CSV formatu
+
+
+Mia:
+	- Dvostruko slijepa recenzija (Double-Blind)
+	Bilježenje područja stručnosti i interesa recenzenta
+	Ručna dodjela recenzenta pojedinom radu
+	Automatska detekcija i blokada sukoba interesa
+	Prikaz popisa radova dodijeljenih pojedinom recenzentu
+	Uklanjanje imena i metapodataka autora iz odgovora recenzentu
+	Uklanjanje autorskih podataka iz PDF datoteke (ili provjera anonimnosti)
+	Prihvaćanje ili odbijanje zadatka recenziranja
+	Pohrana nacrta recenzije (spremak bez konačne predaje)
+	Unos ocjena po definiranim kriterijima
+	Unos tekstualnih komentara za odbor i za autora
+	Zaključavanje i konačna predaja recenzije
+	Praćenje rokova i detekcija zakašnjelih recenzija
+	Omogućavanje dodjele više recenzenata na isti rad
+	Prikaz svih recenzija rada ovlaštenim članovima odbora
+
+	- Odluke o radovima
+	Pregled svih pristiglih recenzija za članove odbora
+	Unos konačne odluke (prihvaćen, odbijen, potrebna revizija)
+	Spremanje vremena i osobe koja je donijela odluku
+	Automatska promjena konačnog statusa rada
+	Slanje službene obavijesti autoru o odluci
+	Dohvat i pregled povijesti svih donesenih odluka
+
+	- Komunikacija i obavijesti
+	Slanje e-mail obavijesti o primljenom radu
+	Slanje e-mail obavijesti recenzentu o novoj dodjeli
+	Slanje e-mail obavijesti autoru o rezultatu recenzije
+	Automatizirani pozadinski zadaci (Cron) za slanje podsjetnika
+	Korištenje i popunjavanje predložaka e-mail poruka
+	Pohrana dnevnika (loga) poslanih i neuspjelih obavijesti
+
+	- Zbornik radova i vanjske integracije (opcionalno)
+	Skupljanje svih prihvaćenih radova u zbornik
+	Generiranje metapodataka zbornika (naslovi, autori, kazalo)
+	Integracija s Crossref API-jem za dohvat/provjeru DOI podatak
+	Izvoz rasporeda i programa u vanjske formate (npr. iCal)
+	Integracija s ORCID API-jem za verifikaciju identiteta
