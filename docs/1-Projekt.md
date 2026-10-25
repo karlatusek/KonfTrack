@@ -1,21 +1,16 @@
 # 1. Opseg projekta
 
-**Cilj:** Objasniti odobreni projektni zadatak vlastitim riječima tima. Čitatelj treba razumjeti problem, ciljane korisnike, cilj projekta i njegove granice bez prethodnog čitanja detaljnih zahtjeva.
+**Cilj:** Organizacija znanstvene konferencije koja se sastoji od objava informacija o konferenciji, primanje znanstvenih radova, dodjele recenzenata, provođenje recenzijskog postupka, donošenje odluka o prihvaćanju radova i izrada programa konferencije. Korisnici su: sudionici konferencija, recenzenti, autori radova i organizatori konferencija.
 
 ## 1.1 Problem i cilj projekta
 
-**Cilj:** Jasno razgraničiti problem koji se rješava od predloženog rješenja i stvarne koristi za korisnika.
+**Cilj:** Cilj projekta KonfTrack je razviti web-platformu koja omogućuje upravljanje znanstvenim konferencijama i njihovim ključnim organizacijskim procesima. Sustav će podržavati upravljanje korisnicima i njihovim pravima pristupa, stvaranje i uređivanje konferencija, predaju znanstvenih radova, dvostruko slijepo recenziranje, donošenje odluka te organizaciju programa konferencije. Također će omogućiti slanje obavijesti povezanih s važnim događajima u postupku organizacije konferencije u slučaju promjena.
 
-[Problem, cilj i očekivana korist vlastitim riječima tima.]
+Organizacija znanstvenih konferencija često se oslanja na razmjenu e-mailova i sinkronizaciju tablica. Takav pristup dovodi do gubitka dokumenata, propuštanja strogih rokova, rizika od curenja identiteta autora tijekom recenzije te otežane komunikacije između organizatora, recenzenata i autora.
 
-<details>
-<summary><strong>Očekivane koristi i potkrepljujući dokazi</strong></summary>
+Očekivana korist projekta je jednostavnije upravljanje konferencijama, bolja preglednost tijeka obrade radova, lakše praćenje rokova i jasnije razdvajanje ovlasti među sudionicima. Sustav bi trebao omogućiti da autori, recenzenti i organizatori pristupaju funkcijama i informacijama koje su im potrebne, uz očuvanje povjerljivosti recenzijskog postupka i zaštitu osobnih podataka.
 
-**Primjer — CrisisMap:** „Tijekom teških vremenskih prilika građaninu mogu trebati prijave kriznih događaja relevantne za njegovu lokaciju. CrisisMap ima za cilj prikazati lokacijski relevantne prijave kriznih događaja na karti kako bi ih građanin mogao pronaći na jednom mjestu.” Time su navedeni problem, ciljani korisnik, predložena mogućnost i očekivana korist. Ne tvrdi se da je izmjereno smanjenje vremena reagiranja niti da aplikacija ima integraciju sa službom za hitne intervencije. Tim i dalje mora opisati opseg odobren za vlastiti projekt.
 
-„Aplikacija smanjuje vrijeme odgovora na krizni događaj za 30 % na temelju simulacija.” Broj očekivanu korist čini konkretnijom, ali odmah zahtijeva provjeru: **gdje je simulacija i kako je postotak izračunan?** Ako takav dokaz ne postoji, očekivanu korist navedite bez brojčanog rezultata.
-
-</details>
 
 ## 1.2 Ciljani korisnici i dionici
 
@@ -23,8 +18,13 @@
 
 | Skupina korisnika ili dionika | Potreba ili interes relevantan za ovaj projekt |
 | --- | --- |
-|  |  |
+| Administrator sustava | Upravljanje korisničkim računima i provođenje administrativnih aktivnosti |
+| Autor rada | Pregledati dostupne konferencije, predati rad, upravljati vlastitim predajama u dopuštenom razdoblju i pregledati dostupne informacije o odlukama |
+| Recenzent | Pregledati dodijeljene radove te izraditi i predati recenziju u propisanom roku |
+| Organizator konferencije | Pratiti tijek recenziranja, vidjeti rezultate recenzija, donositi odluke i organizirati program konferencije u skladu s dodijeljenim ovlastima |
+| Korisnici | Prijava na konferencije i sigurnost podataka |
 
+Korisničke uloge definiraju se prema potrebama sustava. Pojedini korisnik može sudjelovati u više konferencija, a njegova prava pristupa mogu ovisiti o ulozi dodijeljenoj za određenu konferenciju.
 <details>
 <summary><strong>Korisnici, dionici i neobavezna persona</strong></summary>
 
@@ -46,9 +46,46 @@ Riječ je o dvjema različitim potrebama, a ne o dvjema izmišljenim biografijam
 
 **Cilj:** Jasno definirati granice sustava — što je obuhvaćeno odobrenim zadatkom, što je svjesno izostavljeno ili odgođeno te o kojim vanjskim uslugama sustav izravno ovisi.
 
-**Uključeno:** [Glavne mogućnosti.]  
-**Izvan opsega ili odgođeno:** [Navedite funkcionalnosti koje su namjerno izostavljene ili prebačene u buduće verzije, uz kratko inženjersko ili vremensko obrazloženje.] 
-**Vanjske ovisnosti:** [Navedite nužne vanjske usluge, API-je, baze podataka ili izvore informacija bez kojih sustav ne može funkcionirati (npr. Google Maps, platni pristupnici, vanjski pružatelj identiteta (OAuth)).]
+**Uključeno:** 
+
+->Registracija korisnika, prijava, odjava, upravljanje profilom i promjena lozinke.
+
+->Definiranje korisničkih uloga i provjera prava pristupa na backendu.
+
+->Stvaranje, pregled i uređivanje konferencija te upravljanje njihovim statusima, vidljivošću, znanstvenim temama i rokovima.
+
+->Predaja znanstvenih radova, pohrana njihovih datoteka i upravljanje statusima predaja.
+
+->Provođenje dvostruko slijepog recenziranja, dodjela recenzenata i evidentiranje recenzija.
+
+->Evidentiranje odluka o radovima i obavještavanje korisnika o važnim događajima.
+
+->Validacija ulaznih podataka
+
+
+**Izvan opsega ili odgođeno:** 
+
+->Automatizirano generiranje i objavljivanje cjelovitih zbornika radova, osim ako se ta funkcionalnost naknadno potvrdi kao dio obveznog opsega.
+
+->Napredne integracije s vanjskim sustavima, primjerice Crossrefom ili ORCID-om, jer nisu uključene u odobreni zadatak.
+
+->Integracija s vanjskim sustavima za plaćanje kotizacija, jer nije dogovorena kao zahtjev projekta.
+
+->Napredne funkcionalnosti koje nisu potrebne za ostvarenje osnovnih procesa upravljanja konferencijama.
+
+
+**Vanjske ovisnosti:** 
+
+->Sustav za upravljanje relacijskom bazom podataka za pohranu korisnika, konferencija, radova, recenzija i povezanih podataka. ()
+
+->Poslužiteljsko okruženje za pokretanje web-aplikacije i pohranu datoteka. ()
+
+->Usluga za slanje obavijesti putem e-pošte i postupak resetiranja lozinke. ()
+
+->Vanjski pružatelj identiteta (OAuth)
+
+->Sustav za verzije koda i suradnju na projektu. (GitHub)
+
 
 <details>
 <summary><strong>Primjer početne granice projekta</strong></summary>
@@ -72,7 +109,7 @@ Ovaj pregled zadržite na razini opsega: navedite glavnu mogućnost i njezinu gr
 
 **Cilj:** Objasniti kako korisnici trenutačno rješavaju problem i koja preostala potreba opravdava odobreni projekt.
 
-[U dvije do četiri rečenice opišite jedan postojeći postupak ili relevantno rješenje, što ono već omogućuje i koja konkretna potreba motivira ovaj projekt. Činjenične tvrdnje o vanjskim proizvodima ili praksama potkrijepite izvorom.]
+Organizacija znanstvenih konferencija često se oslanja na fragmentirane postupke i odvojene alate koji omogućuju tek parcijalno zaprimanje radova i komunikaciju. Upravo ta rascjepkanost i potreba za centraliziranim upravljanjem motiviraju razvoj KonfTracka kao jedinstvene platforme koja na jednom mjestu povezuje korisnike, radove, recenzije i odluke. Time se organizacijskim odborima osigurava sustavna podrška za praćenje rokova i očuvanje stroge povjerljivosti postupka, bez preuzimanja uloge samog donošenja odluka.
 
 <details>
 <summary><strong>Postojeći pristupi i opravdanost projekta</strong></summary>
